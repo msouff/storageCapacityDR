@@ -1,0 +1,24 @@
+#volDiv {
+    padding-top: 20px;
+}
+
+#volBlue {
+    padding-left: 2em;
+    font-weight: bold;
+    color: lightblue;
+}
+
+#app-content-wrapper #app-content #app-actions {
+    visibility: hidden;
+}
+
+#inner-app-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+#app-content-wrapper {
+    overflow: hidden;
+}
