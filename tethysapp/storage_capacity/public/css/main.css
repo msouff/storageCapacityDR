@@ -22,3 +22,19 @@
 #app-content-wrapper {
     overflow: hidden;
 }
+
+#byu-logo-container {
+    float: left;
+    position: absolute;
+    bottom: 8px;
+}
+#byu-logo-container img {
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+#byu-logo-container span {
+    position: relative;
+    top: 25px;
+    margin-left: 10px;
+}

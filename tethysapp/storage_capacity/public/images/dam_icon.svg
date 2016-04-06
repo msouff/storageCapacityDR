@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="283px" height="283px" viewBox="-36 -36.995 283 283"
+	 overflow="visible" enable-background="new -36 -36.995 283 283" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="211.465" height="211.465"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M105.732,210.036c57.604,0,104.303-46.698,104.303-104.303
+		c0-57.605-46.699-104.304-104.303-104.304C48.127,1.429,1.429,48.128,1.429,105.733C1.429,163.338,48.127,210.036,105.732,210.036"
+		/>
+	<circle clip-path="url(#SVGID_2_)" fill="none" stroke="#37AFE5" stroke-width="2.858" cx="105.732" cy="105.733" r="104.303"/>
+	<path clip-path="url(#SVGID_2_)" fill="#005BA8" d="M92.889,149.57h40.988l-21.203-89.228c0,0-0.834-5.301-7.483-5.301H92.889
+		V149.57z"/>
+	<path clip-path="url(#SVGID_2_)" fill="#37AFE5" d="M19.913,66.173v83.396h69.351V66.173h-0.191
+		c-0.827,2.85-4.306,4.992-8.478,4.992c-4.172,0-7.651-2.142-8.478-4.992h-0.382c-0.827,2.85-4.306,4.992-8.477,4.992
+		c-4.172,0-7.652-2.142-8.479-4.992h-0.381c-0.827,2.85-4.307,4.992-8.478,4.992c-4.172,0-7.651-2.142-8.479-4.992H37.06
+		c-0.827,2.85-4.306,4.992-8.478,4.992s-7.651-2.142-8.478-4.992H19.913z"/>
+	<path clip-path="url(#SVGID_2_)" fill="none" stroke="#37AFE5" stroke-width="1.652" d="M136.086,127.066
+		c3.811-3.047,11.43-3.047,15.24,0c3.809,3.047,11.429,3.047,15.238,0c3.811-3.047,11.431-3.047,15.24,0s11.43,3.047,15.239,0"/>
+	<path clip-path="url(#SVGID_2_)" fill="none" stroke="#37AFE5" stroke-width="1.652" d="M136.086,141.864
+		c3.811-3.047,11.43-3.047,15.24,0c3.809,3.047,11.429,3.047,15.238,0c3.811-3.047,11.431-3.047,15.24,0s11.43,3.047,15.239,0"/>
+</g>
+<line fill="none" stroke="#FFFFFF" stroke-width="3.117" x1="17.704" y1="91.263" x2="89.972" y2="91.263"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="3.117" x1="19.913" y1="120.429" x2="90.055" y2="120.429"/>
+</svg>

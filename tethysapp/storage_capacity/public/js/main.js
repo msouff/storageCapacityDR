@@ -1,3 +1,10 @@
+//loads modal on page load
+$(document).ready(function () {
+    $("#welcome-popup").modal("show");
+});
+
+//----------------------------------------------------------------------------------------------------------------------
+
 //creates variable for public functions
 var app;
 
@@ -24,13 +31,10 @@ require(["dojo/dom",
 
     //creates map
     var map = new Map("mapDiv", {
-        center: [-70, 18.6],
+        center: [-69.5, 18.6],
         zoom: 8,
         basemap: "satellite"
     });
-
-    //initializes drawing tool on map load
-    map.on("load", createToolbar);
 
     //creates streamlines featuer layer and adds it to the map
     var featureLayer = new FeatureLayer("http://geoserver.byu.edu/arcgis/rest/services/hydropower_mskl/backgroundData/MapServer/1");
@@ -39,6 +43,8 @@ require(["dojo/dom",
     var layerInfos = [{
         layer: featureLayer
     }];
+
+    //add snapping functionality to the map
     map.enableSnapping({alwaysSnap: true}).setLayerInfos(layerInfos);
 
     //creates geoprocessing task by calling geoprocessing service for server
@@ -51,16 +57,16 @@ require(["dojo/dom",
         toolbar.on("draw-complete", addPointToMap);
     }
 
-    //function to enable draw point on map
+    //function to enable draw point tool on map
+    var pointTest;
     function drawPoint() {
+        if (pointTest === false) {
+            toolbar.deactivate();
+        }
+        pointTest = true;
         map.graphics.clear();
         map.setMapCursor("crosshair");
         $("#initDraw").bind("click", createToolbar(map));
-        map.on("click", activateTool());
-    }
-
-    //activates drawing tool
-    function activateTool() {
         toolbar.activate(Draw.POINT);
         map.hideZoomSlider();
     }
@@ -87,14 +93,15 @@ require(["dojo/dom",
 
         map.setMapCursor("auto")
         map.showZoomSlider();
-        //toolbar.deactivate();
+        if (pointTest === true) {
+            var graphic = new Graphic(evt.geometry, pointSymbol);
+            map.graphics.add(graphic);
 
-        var graphic = new Graphic(evt.geometry, pointSymbol);
-        map.graphics.add(graphic);
-
-        var features = [];
-        features.push(graphic);
-        featureSet.features = features;
+            var features = [];
+            features.push(graphic);
+            featureSet.features = features;
+            pointTest = false;
+        };
     };
 
     //displays request status
