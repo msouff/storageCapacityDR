@@ -117,7 +117,9 @@ require(["dojo/dom",
 
     //calls draw reservoir and get volume on success, or failedcallback on failed request
     function completeCallback(jobInfo) {
-        gp.getResultData(jobInfo.jobId, "reservoir", drawReservoir, failedCallback);
+        map.graphics.clear()
+        gp.getResultData(jobInfo.jobId, "watershed", drawWatershed, failedCallback);
+        gp.getResultData(jobInfo.jobId, "reservoir", drawReservoir);
         gp.getResultData(jobInfo.jobId, "volume", getVolume);
     }
 
@@ -126,17 +128,29 @@ require(["dojo/dom",
         alert("No major stream found nearby. Please click at least within 100 meters of a major stream.")
     }
 
-    //creates reservoir polygon on successful request and adds it to the map
+     //creates reservoir polygon on successful request and adds it to the map
     function drawReservoir(reservoir) {
-        map.graphics.clear()
         var polySymbol = new SimpleFillSymbol();
         polySymbol.setOutline(new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 1));
         polySymbol.setColor(new Color([0, 127, 255, 0.7]));
         var features = reservoir.value.features;
         for (var f = 0, fl = features.length; f < fl; f++) {
-            var feature = features[f];
-            feature.setSymbol(polySymbol);
-            map.graphics.add(feature);
+            var featureRe = features[f];
+            featureRe.setSymbol(polySymbol);
+            map.graphics.add(featureRe);
+        }
+    };
+
+    //creates watershed polygon on successful request and adds it to the map
+    function drawWatershed(watershed) {
+        var polySymbol = new SimpleFillSymbol();
+        polySymbol.setOutline(new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 2));
+        polySymbol.setColor(new Color([0, 127, 255, 0]));
+        var features = watershed.value.features;
+        for (var f = 0, fl = features.length; f < fl; f++) {
+            var featureWa = features[f];
+            featureWa.setSymbol(polySymbol);
+            map.graphics.add(featureWa);
         }
         map.setExtent(graphicsUtils.graphicsExtent(map.graphics.graphics), true);
     };
