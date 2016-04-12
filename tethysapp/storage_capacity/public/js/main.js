@@ -60,6 +60,7 @@ require(["dojo/dom",
     //function to enable draw point tool on map
     var pointTest;
     function drawPoint() {
+        map.graphics.clear();
         if (pointTest === false) {
             toolbar.deactivate();
         }
@@ -80,12 +81,12 @@ require(["dojo/dom",
             "pour_point": featureSet,
             "height": $("#damHeight").val()
         };
+        map.setMapCursor("progress");
         gp.submitJob(params, completeCallback, statusCallback);
     };
 
     //creates symbology for point, draws point, adds it to map, and adds it to feature set variable
     function addPointToMap(evt) {
-        map.graphics.clear();
         var pointSymbol = new SimpleMarkerSymbol();
         pointSymbol.setSize(14);
         pointSymbol.setOutline(new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255, 0, 0]), 1));
@@ -125,6 +126,8 @@ require(["dojo/dom",
 
     //prints alert for wrong input point on failed request
     function failedCallback() {
+        map.setMapCursor("auto");
+        $("#vol").html("<p class='bg-danger'><span id='volError'>No nearby stream found</span></p>");
         alert("No major stream found nearby. Please click at least within 100 meters of a major stream.")
     }
 
@@ -152,6 +155,7 @@ require(["dojo/dom",
             featureWa.setSymbol(polySymbol);
             map.graphics.add(featureWa);
         }
+        map.setMapCursor("auto");
         map.setExtent(graphicsUtils.graphicsExtent(map.graphics.graphics), true);
     };
 
@@ -181,5 +185,5 @@ require(["dojo/dom",
     }
 
     //adds public functions to variable app
-    app = {drawPoint: drawPoint, submitResRequest: submitResRequest};
+    app = {map: map, drawPoint: drawPoint, submitResRequest: submitResRequest};
 });

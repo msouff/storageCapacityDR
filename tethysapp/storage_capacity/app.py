@@ -12,6 +12,7 @@ class StorageCapacity(TethysAppBase):
     package = 'storage_capacity'
     root_url = 'storage-capacity'
     color = 'blue'
+    description = 'Calculate potential reservoir storage capacity at specific location in the DR given a dam height.'
     enable_feedback = False
     feedback_emails = []
 

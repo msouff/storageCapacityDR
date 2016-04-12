@@ -4,6 +4,25 @@
 
 {% block app_content_wrapper_override %}
 <!-- Modal  -->
+<style>
+  #desc {
+    color: black;
+    font-size:12pt;
+    margin-left:10px;
+  }
+  .sub {
+    font-size:12pt;
+  }
+  .modalNote {
+    color: gray;
+    margin-left:10px;
+  }
+  .modalList {
+    margin:10px;
+    font-size:16pt;
+
+  }
+</style>
 <div class="modal fade" id="welcome-popup" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -13,7 +32,33 @@
       </div>
       <div class="modal-body">
         <div id="welcome-info">
-
+          <div class="line">
+            <p id="desc">This application calculates the storage capacity of a potential reservoir given a location at
+              any stream within the Dominican Republic and a dam height. Follow the steps below in order to successfully
+              calculate storage capacity.</p>
+          </div>
+          <ol>
+          <li class="modalList">Zoom to location</li>
+          <span class="sub">Zoom into a general region of interest.</span>
+          <li class="modalList">Select point of interest</li>
+          <span class="sub">Click the "Click here to draw point" button to begin selecting a location. Next,
+            click on a stream on the map to select your point of interest.</span>
+          <li class="modalList">Specify dam height</li>
+          <span class="sub">Enter a desired dam height in the text box below "Enter Dam Height (Meters)". The
+          default value is set to 100 meters.</span>
+          <li class="modalList">Calculate storage capacity</li>
+          <span class="sub">Click the "Submit" button to begin calculating storage capacity. </span>
+          <li class="modalList">Review results</li>
+          <span class="sub">After clicking the "Submit" button, the application will produce a total volume  in cubic
+            meters, and draw both a watershed and a reservoir area on the map.</span>
+          </ol>
+          <div class="modalNote">
+            <span>
+              Note: Storage capacity will only be calculated if users click within a river stream. Clicking outside a
+              stream will prompt a message asking users to specify a point of interest at least 100 meters within the
+              closest stream.
+            </span>
+          </div>
         </div>
       </div>
       <div class="modal-footer">

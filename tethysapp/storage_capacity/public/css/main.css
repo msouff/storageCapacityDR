@@ -8,8 +8,14 @@
     color: lightblue;
 }
 
+#volError {
+    padding-left: 2em;
+    font-weight: bold;
+    color: red;
+}
+
 #app-content-wrapper #app-content #app-actions {
-    visibility: hidden;
+    display: none;
 }
 
 #inner-app-content {
