@@ -3,7 +3,7 @@
 ####Software Details
 
 <p>This application was built for the purpose of computing reservoir volumes from a
-specified location within the Dominican Republic. The application was designed
+specified location within the Dominican Republic (<a href="http://tethys.byu.edu/apps/storage-capacity/"> Click here to go to the app</a>). The application was designed
 using a python script, which was added to an ArcGIS Server as a geoprocessing service, 
 and Tethys platform in combination with the ArcGIS API for JavaScript for the front end of the app. 
 This application was created by Michael Souffront and Kyugene Lee.</p>
@@ -25,7 +25,7 @@ a geoprocessing service to an ArcGIS Server in order to calculate and store rese
 
 <p>A simple approach was taken when designing the front end part of the app. We tried to make as intuitive as possible. 
 A help guide is provided in the app in case any of the steps necessary to run the app is not clear enough. 
-The application as a one-page website. The application can be accessed from Tethys portal as shown in Figure 1 below. 
+The application was designed as a one-page website. It can be accessed from BYU Tethys portal (http://tethys.byu.edu/) as shown in Figure 1 below. 
 A zoomed in image of the buttons used to calculate a potential dam and reservoir volume is shown in Figure 2.
 After running the application successfully, the calculated reservoir will
 appear on the main map window with the calculated reservoir volume in cubic
@@ -51,20 +51,20 @@ Capacity application.</p>
 ######Main Files
 
 <p>The main files associated with this application include raster data (surface elevation, 
-flow direction, and flow accumulation), a map service the main streams in the Dominican Republic, 
-and the geoprocessing service file to calculate storage capacity.</p>
+flow direction, and flow accumulation), a map service with the main streams in the Dominican Republic, 
+and the geoprocessing service task to calculate storage capacity.</p>
 
 ######Code Structure
 
 <p>The basic structure of the Python script that calculates storage capacity is shown in the
-flowchart below, Figure 4. The blue filled circles represent the input features
+flowchart below, Figure 4. The blue filled circles represent input features
 necessary for the geoprocessing task to run. The red filled shapes represent processing steps. 
 The orange squares represent intermediate features, some of which are also saved as outputs 
-(e.g. the watershed and reservoir features)</p>
+(e.g. the watershed and reservoir features). </p>
 
 <img border=0 width=625 height=461 id="Picture 2"
 src="https://github.com/msouff/storageCapacityDR/blob/master/tethysapp/storage_capacity/public/images/script_structure.jpg">
-<p>Figure 4. Python script structure diagram.</p>
+<p>Figure 4. Python script structure diagram. This is a simplified diagram. The actual script uses more steps that the ones shown here.</p>
 
 ######Key Functions
 
