@@ -1,7 +1,7 @@
 Metadata-Version: 1.0
 Name: tethysapp-storage-capacity
 Version: 0.0
-Summary: UNKNOWN
+Summary: Calculate potential reservoir storage capacity at specific location in the DR given a dam height.
 Home-page: UNKNOWN
 Author: Michael Souffront
 Author-email: UNKNOWN

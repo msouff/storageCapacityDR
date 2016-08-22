@@ -48,7 +48,7 @@ require(["dojo/dom",
     map.enableSnapping({alwaysSnap: true}).setLayerInfos(layerInfos);
 
     //creates geoprocessing task by calling geoprocessing service for server
-    gp = new Geoprocessor("http://geoserver.byu.edu/arcgis/rest/services/hydropower_mskl/reservoirVolumeDR/GPServer/Reservoir%20Volume%20DR");
+    gp = new Geoprocessor("http://geoserver.byu.edu/arcgis/rest/services/hydropower_mskl/reservoirVolumeDR/GPServer/Reservoir%20Volume");
     gp.setOutputSpatialReference({wkid: 102100});
 
     //creates drawing tool
